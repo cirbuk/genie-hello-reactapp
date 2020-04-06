@@ -1,0 +1,17 @@
+.navbar {
+  height: 10rem;
+  width: 100%;
+  padding: 2rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.navItem {
+  padding: 0 3rem;
+}
+
+.logo {
+  width: 6rem;
+  object-fit: contain;
+}
