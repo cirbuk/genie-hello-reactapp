@@ -4,18 +4,32 @@ import Container from '../../components/Container';
 import styles from './style.module.scss';
 import { helloWorld } from '../../api';
 import genieImage from '../../icons/genie.jpg';
+import HelloHumanImage from '../../icons/genie-hello.png';
 
 export default () => {
   const [name, setName] = useState('');
   const [color, setColor] = useState('');
   const [bgColor, setBgColor] = useState('');
+  const [showPreview, setPreview] = useState(false);
+  const [previewImage, setPreviewImage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [disableButton, setButton] = useState(true);
 
   const validation = () => {
-    if (name.trim() === '' || color.trim() === '' || bgColor.trim() === '' ) {
+    if (name.trim() === '' && color.trim() === '' && bgColor.trim() === '') {
       return false;
     }
     return true;
-  }
+  };
+
+  useEffect(() => {
+    if (name.trim() === '' || color.trim() === '' || bgColor.trim() === '') {
+      setButton(true);
+    } else {
+      setButton(false);
+    }
+  },[name, color, bgColor]);
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -25,43 +39,67 @@ export default () => {
       bgColor
     };
     if (validation()) {
+      setLoading(true);
       const result = await helloWorld(data);
-      console.log(result);
+      setLoading(false);
+      if (result.status === 200) {
+        setPreviewImage(result.data);
+        setPreview(true);
+      } else {
+        if (result.status === 500) {
+          setErrorMessage("There's some problem. Please try again in a few hours");
+        } else {
+          setErrorMessage('Some Error occured');
+        }
+
+        setPreview(false);
+      }
     } else {
-      console.log("error - validation wrong");
+      setErrorMessage("Please fill atleast one value");
     }
-    
   };
 
   return (
     <Fragment>
       <Navbar />
-      {/* <Container className={styles.container}> */}
-        <h1 className={styles.heading}>Hello Human!</h1>
-        <div className={styles.content}>
-          <div className={styles.formContainer}>
-            <div className={styles.preview}></div>
-            <form onSubmit={handleSubmit} className={styles.form}>
+      <h1 className={styles.heading}>Hello Human!</h1>
+      <div className={styles.content}>
+        <div className={`${styles.formContainer} ${showPreview ? styles.active : ''}`}>
+          <div className={styles.flipCardInner}>
+            {loading ? (
+              <div className={styles.spinnerContainer}>
+                <span className={styles.spinner}></span>
+              </div>
+            ) : null}
+            <div className={`${styles.preview} ${styles.flipCardBack}`}>
+              <img src={previewImage} alt='Hello human image' />
+              <button
+                onClick={e => {
+                  setPreview(false);
+                }}>
+                Generate Another
+              </button>
+            </div>
+            <form onSubmit={handleSubmit} className={`${styles.form} ${styles.flipCardFront}`}>
               <div className={styles.formGroup}>
-                {/* <label>Your Name</label> */}
-                <input name='name' value={name} onChange={e => setName(e.target.value)} placeholder='Stanley Kubrick' />
+                <input name='name' value={name} onChange={e => setName(e.target.value)} placeholder='Human Name' />
               </div>
               <div className={styles.formGroup}>
-                {/* <label>Text Color</label> */}
-                <input name='color' value={color} onChange={e => setColor(e.target.value)} placeholder='#fff or white' />
+                <input name='color' value={color} onChange={e => setColor(e.target.value)} placeholder='Text Color' />
               </div>
               <div className={styles.formGroup}>
-                {/* <label>Background Color</label> */}
-                <input name='bgColor' value={bgColor} onChange={e => setBgColor(e.target.value)} placeholder='#eee or black' />
+                <input name='bgColor' value={bgColor} onChange={e => setBgColor(e.target.value)} placeholder='Background Color' />
               </div>
-              <button>Save</button>
+              <button disabled={disableButton ? true : false }>Save</button>
+
+              {errorMessage === '' ? null : <div className={styles.errorMessage}>{errorMessage}</div>}
             </form>
           </div>
-          <div className={styles.genie}>
-            <img src={genieImage} alt='genie logo' />
-          </div>
         </div>
-      {/* </Container> */}
+        <div className={styles.genie}>
+          <img src={genieImage} alt='genie logo' />
+        </div>
+      </div>
     </Fragment>
   );
 };
