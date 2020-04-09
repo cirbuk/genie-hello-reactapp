@@ -12,7 +12,7 @@ router.post('/hello/', async function(req, res, next) {
     res.send({
       status: result.status,
       statusText: result.statusText,
-      data: result.data
+      data: result.request.res.responseUrl
     });
   } catch (err) {
     res.send({

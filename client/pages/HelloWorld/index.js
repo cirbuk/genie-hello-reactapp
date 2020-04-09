@@ -31,6 +31,12 @@ export default () => {
     }
   },[name, color, bgColor]);
 
+  const emptyForm = () => {
+    setName('');
+    setColor('');
+    setBgColor('');
+  }
+
   const handleSubmit = async e => {
     e.preventDefault();
     const data = {
@@ -75,6 +81,7 @@ export default () => {
               <img src={previewImage} alt='Hello human image' />
               <button
                 onClick={e => {
+                  emptyForm();
                   setPreview(false);
                 }}>
                 Generate Another
