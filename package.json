@@ -8,12 +8,7 @@
     "start": "cd server && NODE_ENV=production node bin/www"
   },
   "dependencies": {
-    "@bit/kubric.utils.common.lodash": "1.0.11",
-    "@bit/kubric.utils.common.services": "3.0.1",
-    "@bit/kubric.utils.services.manager": "0.0.13",
-    "@kubric/resolver": "1.0.2",
     "axios": "0.19.0",
-    "config": "3.2.4",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
