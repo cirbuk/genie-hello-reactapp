@@ -5,11 +5,12 @@ import styles from './style.module.scss';
 import { helloWorld } from '../../api';
 import genieImage from '../../icons/genie.jpg';
 import HelloHumanImage from '../../icons/genie-hello.png';
+import genieGif from '../../icons/genie.gif';
 
 export default () => {
-  const [name, setName] = useState('');
-  const [color, setColor] = useState('');
-  const [bgColor, setBgColor] = useState('');
+  const [name, setName] = useState('Human');
+  const [color, setColor] = useState('#4f4c4c');
+  const [bgColor, setBgColor] = useState('#fffce6');
   const [showPreview, setPreview] = useState(false);
   const [previewImage, setPreviewImage] = useState('');
   const [loading, setLoading] = useState(false);
@@ -31,10 +32,10 @@ export default () => {
     }
   },[name, color, bgColor]);
 
-  const emptyForm = () => {
-    setName('');
-    setColor('');
-    setBgColor('');
+  const preFilledForm = () => {
+    setName('Human');
+    setColor('#4f4c4c');
+    setBgColor('#fffce6');
   }
 
   const handleSubmit = async e => {
@@ -81,7 +82,7 @@ export default () => {
               <img src={previewImage} alt='Hello human image' />
               <button
                 onClick={e => {
-                  emptyForm();
+                  preFilledForm();
                   setPreview(false);
                 }}>
                 Generate Another
@@ -104,7 +105,7 @@ export default () => {
           </div>
         </div>
         <div className={styles.genie}>
-          <img src={genieImage} alt='genie logo' />
+          <img src={genieGif} alt='genie logo' />
         </div>
       </div>
     </Fragment>
