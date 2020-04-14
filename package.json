@@ -14,11 +14,8 @@
     "express": "~4.16.1",
     "fibers": "^4.0.2",
     "file-loader": "5.0.2",
-    "firebase": "7.5.0",
-    "gen-uid": "0.0.2",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
-    "lodash": "4.17.15",
     "morgan": "~1.9.1",
     "path": "0.12.7",
     "pug": "^2.0.4",
@@ -26,7 +23,6 @@
     "react-dom": "16.12.0",
     "react-router-dom": "^5.1.2",
     "style-loader": "1.0.1",
-    "uuidv4": "6.0.0",
     "webpack": "^4.42.1"
   },
   "devDependencies": {
