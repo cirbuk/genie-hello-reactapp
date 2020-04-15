@@ -10,27 +10,33 @@ These instructions will get you a copy of the project up and running on your loc
 
 1. Clone The repo
 
-````bash
+```
 git clone https://github.com/cirbuk/genie-hello-reactapp.git
-```1. Install required dependencies, set the nvm to 10.16. [Guide to install nvm](https://github.com/nvm-sh/nvm#install-script)
+```
 
-```bash
+2. Install required dependencies, set the nvm to 10.16. [Guide to install nvm](https://github.com/nvm-sh/nvm#install-script)
+
+```
 cd genie-hello-reactapp
 nvm use 10.16
 npm install
-```1. Start the webpack server
+```
 
-```bash
+3. Start the webpack server
+
+```
 npm run build-development
-```1. Start the express server in another terminal
+```
 
-```bash
+4. Start the express server in another terminal
+
+```
 npm start
-```1. Get the app running on your browser
+```
+
+5. Get the app running on your browser
 
 > [http://localhost:4000](http://localhost:4000/)
-
-
 
 ## Trying out the app
 Simply type out your_ __**human name**__, __**a text and a background color**_ in the given input boxes and hit generate. You'll see a personalised poster just for you that looks something like this!
