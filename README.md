@@ -2,9 +2,9 @@
 
 This App makes uses of this [Genie Hello API](https://docs.kubric.io/docs/say-hello-world) to generate your own welcome poster in a simple-to-use react app.
 
-Check out the app hosted <mark>here</mark> or Tickle the with the code in your local machine using the setup below.
+Try the hosted app *here* or Tickle the with the code in your local machine using the setup below.
 
-## Setting up this project locally
+## Setting up the project locally
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
