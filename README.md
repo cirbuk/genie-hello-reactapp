@@ -42,6 +42,5 @@ npm start
 Simply type out your **human name, a text, background color** in the given input boxes and hit generate. You'll see a personalised poster just for you that looks something like this!
 
 
-
 ![hellohuman.png](https://lh3.googleusercontent.com/2fPVVFkdOzc-PAImyCMB_MQuGhfPaitMQbIi8oE7xUlzZxM4bp3jOjrf8qlrlPWCYC5PdYrt7F7zBqb10PGjFHYl)
-````
+
