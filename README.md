@@ -39,7 +39,7 @@ npm start
 > [http://localhost:4000](http://localhost:4000/)
 
 ## Trying out the app
-Simply type out your __**human name**__, _**a text and a background color**_ in the given input boxes and hit generate. You'll see a personalised poster just for you that looks something like this!
+Simply type out your **human name, a text, background color** in the given input boxes and hit generate. You'll see a personalised poster just for you that looks something like this!
 
 
 
