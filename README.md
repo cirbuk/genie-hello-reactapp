@@ -1,40 +1,41 @@
-# Genie Hello World App
+## Genie Hello World App
 
-some description
+This App makes uses of this [Genie Hello API](https://docs.kubric.io/docs/say-hello-world) to generate your own welcome poster in a simple-to-use react app.
 
-## Getting Started
+Check out the app hosted <mark>here</mark> or Tickle the with the code in your local machine using the setup below.
+
+## Setting up this project locally
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-1.> Clone the repo
+1. Clone The repo
 
-2.> Install the required dependencies
+````bash
+git clone https://github.com/cirbuk/genie-hello-reactapp.git
+```1. Install required dependencies, set the nvm to 10.16. [Guide to install nvm](https://github.com/nvm-sh/nvm#install-script)
 
-```
+```bash
 cd genie-hello-reactapp
-```
-```
+nvm use 10.16
 npm install
-```
+```1. Start the webpack server
 
-3.> Start a webpack server
-```
+```bash
 npm run build-development
-```
+```1. Start the express server in another terminal
 
-4.> Start an express server
-
-open another terminal
-```
+```bash
 npm start
-```
-this server basically renders all your UI
+```1. Get the app running on your browser
 
-5.> Play with Genie Hello World App
-open your browser and type in http://localhost:4000
+> [http://localhost:4000](http://localhost:4000/)
+
+
 
 ## Trying out the app
+Simply type out your_ __**human name**__, __**a text and a background color**_ in the given input boxes and hit generate. You'll see a personalised poster just for you that looks something like this!
 
-We have pre-filled the form with default values. To see the magic happen please click on Save.
 
-You can generate your custom welcome cards by filling in your name and hex of colors you want.
+
+![hellohuman.png](https://lh3.googleusercontent.com/2fPVVFkdOzc-PAImyCMB_MQuGhfPaitMQbIi8oE7xUlzZxM4bp3jOjrf8qlrlPWCYC5PdYrt7F7zBqb10PGjFHYl)
+````
