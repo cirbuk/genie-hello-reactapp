@@ -10,9 +10,9 @@ jobs:
           keys:
             - 'v1-dependencies-{{ checksum "package.json" }}'
             - v1-dependencies-
-      - run: 'npm install nvm && nvm use 10.16 && npm install'
+      - run: 'npm install && npm run build-development'
       - save_cache:
           paths:
             - node_modules
           key: 'v1-dependencies-{{ checksum "package.json" }}'
-      - run: 'npm test'
+      - run: 'npm start'
