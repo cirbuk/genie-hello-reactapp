@@ -2,7 +2,7 @@
   width: 100%;
   height: 100%;
   border-left: 40px solid #fff;
-  background-color: #256C92;
+  background-color: #256c92;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -41,48 +41,56 @@
   }
 
   .formGroup {
-    padding: .4rem 1.4rem;
+    padding: 0.4rem 1.4rem;
     text-align: left;
     width: 100%;
     max-width: 40rem;
     display: flex;
     flex-direction: column;
-  
+
     label {
       font-size: 16px;
       font-weight: 700;
-      color: #66DBE0;
+      color: #66dbe0;
       margin: 1rem 0rem;
     }
-  
+
     input {
       width: 100%;
       height: 4rem;
-      padding: .4rem 1rem;
+      padding: 0.4rem 1rem;
       outline: none;
       border-radius: 4px;
       border: none;
-      background-color: #1C5776;
-      color: #FFFFFF;
+      background-color: #1c5776;
+      color: #ffffff;
       font-size: 1.6rem;
 
       &:focus {
-        border: 1px solid #B9FCFF;
+        border: 1px solid #b9fcff;
       }
     }
-  
   }
 }
 
 .button {
   border-radius: 4px;
   background-color: #fff;
-  border: .2rem solid #1F5F76;
-  box-shadow: 2 6 0 0 #1C5776;
+  border: 0.2rem solid #1f5f76;
+  box-shadow: 2 6 0 0 #1c5776;
   width: 142px;
   height: 42px;
   font-size: 1.6rem;
   font-weight: 700;
+  outline: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    // border: inherit;
+    border: 0.2rem solid #1f5f76;
+    box-shadow: 2 6 0 0 #1c5776;
+  }
 }
 
 .row {
@@ -91,7 +99,7 @@
 }
 
 .footer {
-  background-color: #1C5776;
+  background-color: #1c5776;
   width: calc(100% - 40px);
   height: 70px;
   font-size: 24px;
