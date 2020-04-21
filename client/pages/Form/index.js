@@ -3,6 +3,7 @@ import styles from './style.module.scss';
 import genieGif from '../../icons/genie.gif';
 import { helloWorld } from '../../api';
 import { useHistory } from 'react-router-dom';
+import KubricLogo from '../../components/KubricLogo';
 
 export default () => {
   const [name, setName] = useState('Human');
@@ -63,16 +64,16 @@ export default () => {
 
   return (
     <div className={styles.page}>
+      {loading ? (
+        <div className={styles.spinnerContainer}>
+          <span className={styles.spinner}></span>
+        </div>
+      ) : null}
       <div className={styles.container}>
         <div className={styles.content}>
-          {loading ? (
-            <div className={styles.spinnerContainer}>
-              <span className={styles.spinner}></span>
-            </div>
-          ) : null}
           <form onSubmit={handleSubmit} className={styles.form}>
-            <h1 style={{ color: '#66DBE0' }}>hello</h1>
-            <h1 style={{ color: '#fff' }}>human</h1>
+            <h1 style={{ color: '#66DBE0', fontFamily: 'Paytone One' }}>hello</h1>
+            <h1 style={{ color: '#fff', fontFamily: 'Paytone One' }}>human</h1>
             <p>Please appease me with these details</p>
             <div className={styles.formGroup}>
               <label>human name</label>
@@ -102,7 +103,10 @@ export default () => {
       </div>
       <footer className={styles.footer}>
         <div className={styles.container}>
-          <h2 className={styles.footerItem}>Powered by kubric</h2>
+          <h2 className={styles.footerItem} style={{fontSize: '1.6rem'}}>
+            Powered by
+            <KubricLogo style={{ width: '15rem' }} />
+          </h2>
         </div>
       </footer>
     </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './style.module.scss';
 import genieDisplay from '../../icons/genie-hello.png';
 import { useHistory, useLocation } from 'react-router-dom';
+import KubricLogo from '../../components/KubricLogo';
 
 export default props => {
   const useQuery = () => {
@@ -13,7 +14,7 @@ export default props => {
   const history = useHistory();
 
   const generateAnother = () => {
-    history.push('/form');
+    history.push('/');
   };
 
   return (
@@ -29,7 +30,7 @@ export default props => {
       <footer className={styles.footer}>
         <div className={styles.container}>
           <div className={styles.row}>
-            <h2 className={styles.h2}>Powered by kubric</h2>
+            <h2 className={styles.h2}>Powered by <KubricLogo/></h2>
             <button className={styles.button} onClick={generateAnother}>
               Make Another One
             </button>
